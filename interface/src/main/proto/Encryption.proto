@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+// Will generate code in multiple files, if not set to true all the code will
+// be generated in a single file
+option java_multiple_files = true;
+option java_package = "org.shams.practice.grpc.encryption";
+
+// The encryption service definition
+service EncryptionService {
+  // Encryption method
+  rpc Encrypt (EncryptionRequest) returns (EncryptionResponse) {
+  }
+}
+
+// The request message for encryption
+message EncryptionRequest {
+  string data = 1;
+}
+
+// The response message after encryption
+message EncryptionResponse {
+  string encryptedData = 1;
+}
